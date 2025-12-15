@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Grid large </title>
+  <style>
+    :root {
+      --accent: #1373e8;
+    
+      --pad: 18px;
+      --sidebar-w: 240px;
+    }
+
+    body {
+      margin: 20px;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      font-size: 16px;
+      color: #111;
+    }
+    .page {
+      display: grid;
+      grid-template-columns: var(--sidebar-w) 1fr;
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+      gap: var(--gap);
+      height: 72vh;
+      box-sizing: border-box;
+    }
+
+    header { grid-area: header; display:flex; align-items:center; justify-content:center; font-size:28px; }
+    aside  { grid-area: sidebar; }
+    main   { grid-area: main; }
+    footer { grid-area: footer; display:flex; align-items:center; justify-content:center; }
+
+    
+    .page > * {
+      border: 4px solid var(--accent);
+      padding: var(--pad);
+      box-sizing: border-box;
+      background: white;
+    }
+
+    /* sidebar links */
+    nav a {
+      display:block;
+      margin: 6px 0;
+      text-decoration: underline;
+      color: rgb(231, 28, 28);  green links in the image */
+    }
+
+   
+    main h2 { margin: 0 0 12px 0; font-weight: 600; font-size:28px; }
+    main p  { line-height: 1.6; margin: 0; }
+      .page {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "header"
+          "sidebar"
+          "main"
+          "footer";
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>My Header</header>
+
+    <aside>
+      <nav>
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </nav>
+    </aside>
+
+    <main>
+      <h2>Lorem Ipsum</h2>
+      <p>
+        Lorem ipsum dolor amet, consectetuer adipiscing elit. Ridiculus sit nisl laoreet
+        facilisis aliquet. Potenti dignissim litora eget montes rhoncus sapien neque urna.
+        Cursus libero sapien integer magnis ligula lobortis quam ut.
+      </p>
+    </main>
+
+    <footer>Footer</footer>
+  </div>
+</body>
+</html>
